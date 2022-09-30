@@ -33,7 +33,7 @@ namespace KTFSWebservice.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromForm]String name, int score )
+        public async Task<IActionResult> Post([FromForm]String name, [FromForm]int score )
         {
             PlayerScore newScore = new PlayerScore(score, name);
             await _gameService.CreateAsync(newScore);
